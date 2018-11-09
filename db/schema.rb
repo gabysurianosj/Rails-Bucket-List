@@ -10,14 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_09_145713) do
+ActiveRecord::Schema.define(version: 2018_11_09_165145) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "countries", force: :cascade do |t|
+    t.string "name"
+    t.string "device"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "mood_trips", force: :cascade do |t|
     t.integer "mood_id"
     t.integer "trip_id"
     t.integer "user_id"
     t.string "user_status"
-    t.string "user_season"
+    t.integer "user_season"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -30,11 +43,17 @@ ActiveRecord::Schema.define(version: 2018_11_09_145713) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "trip_categories", force: :cascade do |t|
+    t.integer "trip_id"
+    t.integer "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "category"
-    t.string "country"
+    t.integer "country_id"
     t.string "status"
     t.string "day"
     t.string "time"

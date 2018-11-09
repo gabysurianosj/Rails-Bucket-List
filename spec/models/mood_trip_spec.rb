@@ -3,14 +3,19 @@ require 'rails_helper'
   it "can be created" do
     user = User.create(email: 'test@123.com', password: 'test123')
     mood = Mood.create(name: 'My Mood', user: user)
+    country = Country.create(name: "Guatemala")
+    category = Category.create(name: "Hiking")
     trip = Trip.create( title: 'Volcan Tajumulco',
                         description: 'tallest peak in Guatemala at 4,220m',
-                        category: 'Hiking',
-                        country: 'Guatemala',
+                        country: country,
                         status: 'Not completed',
                         day: 'Friday',
                         time: '7:00 AM',
                         season: 'summer' )
+
+    trip.categories << category
+    trip.save
+
     mood_trip = MoodTrip.create(mood: mood, trip: trip, user: user, user_status: 'Not completed', user_season: "summer")
     expect(mood_trip).to be_valid
   end
