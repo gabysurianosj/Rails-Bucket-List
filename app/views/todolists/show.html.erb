@@ -1,0 +1,36 @@
+<% content_for :header do %>
+  <h1><%= @todolist.name %></h1>
+  <p><em><%= @todolist.description %></em></p>
+<% end %>
+
+<% content_for :vertical_nav do %>
+  <ul class="nav flex-column">
+    <li class="nav-item mb-3">
+      <%= button_to "Edit this ToDolist", edit_user_todolist_path(current_user, @todolist), :method => "get", class: "btn btn-warning btn-block" %>
+    </li>
+    <li class="nav-item mb-3">
+      <%= button_to "Back to All ToDolists", user_todolists_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+    <li class="nav-item">
+      <%= button_to "Add Trips", trips_path, :method => "get", class: "btn btn-info btn-block" %>
+    </li>
+  </ul>
+<% end %>
+
+<% content_for :content do %>
+  <% @trips.each do |trip| %>
+      <div class="card mb-3">
+        <h5 class="card-header"><%= link_to trip.title, trip_path(trip) %></h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Country: <%= trip.country.name %></li>
+          <li class="list-group-item">Season: <%= trip.season %></li>
+        </ul>
+      </div>
+  <% end %>
+<% end %>
+
+<% content_for :sidebar do %>
+  <%= form_tag(todolist_path, method: "delete") do %>
+    <%= submit_tag("Delete ToDolist", class: "btn btn-danger btn-block") %>
+  <% end %>
+<% end %>
