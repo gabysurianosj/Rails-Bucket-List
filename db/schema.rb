@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_105736) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "todolists", force: :cascade do |t|
+  create_table "moods", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "user_id"
