@@ -5,9 +5,9 @@
       <p><strong>Your Status</strong>:<br>
         <%= listing.user_status %><br>
       <strong>Your Season</strong>: <%= listing.user_season %></p>
-      <%= button_to "Edit ToDolist Details", edit_trip_listing_path(trip, listing), :method => "get", class: "btn btn-warning btn-sm btn-block" %>
+      <%= button_to "Edit To-Do List Details", edit_trip_listing_path(trip, listing), :method => "get", class: "btn btn-warning btn-sm btn-block" %>
       <%= form_for listing, method: :delete do |f| %>
-        <%= f.submit "Remove From ToDolist", class:"btn btn-sm btn-danger btn-block" %>
+        <%= f.submit "Remove From To-Do List", class:"btn btn-sm btn-danger btn-block" %>
       <% end %>
     </div>
   </div>

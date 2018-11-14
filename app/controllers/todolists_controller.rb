@@ -51,6 +51,7 @@ class TodolistsController < ApplicationController
   end
 
   private
+  
   def todolist_params
     params.require(:todolist).permit(:name, :description, :user_id)
   end
