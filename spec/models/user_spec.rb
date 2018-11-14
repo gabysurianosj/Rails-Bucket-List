@@ -1,8 +1,31 @@
 require 'rails_helper'
 
- RSpec.describe User, type: :model do
-  it "can be created" do
-    user = User.create(email: "test@123.com", password: "test123")
-    expect(user).to be_valid
+RSpec.describe User, type: :model do
+  before(:all) do
+    @user1 = create(:user)
+  end
+
+  it { should have_many(:todolists) }
+
+  it { should have_many(:listings) }
+
+  it 'should have many trips' do
+    should have_many(:trips).
+      through(:listings)
+  end
+
+  it "is valid with valid attributes" do
+    expect(@user1).to be_valid
+  end
+
+  it { should have_secure_password }
+
+  it { should validate_presence_of(:email)}
+
+  it { should validate_presence_of(:username)}
+
+  it "has a unique email" do
+    user2 = build(:user, email: @user1.email)
+    expect(user2).to_not be_valid
   end
 end

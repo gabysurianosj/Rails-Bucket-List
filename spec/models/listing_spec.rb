@@ -16,7 +16,7 @@ RSpec.describe Listing, type: :model do
   it { is_expected.to belong_to :user }
 
   it 'is not valid if the season is not a string' do
-    listing2 = build(:listing, user_season: "22")
+    listing2 = build(:listing, user_season: "summer")
     expect(listing2).to_not be_valid
   end
 
