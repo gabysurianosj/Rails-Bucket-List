@@ -20,9 +20,9 @@
 
 <% content_for :content do %>
   <p><%= @trip.description %></p>
-  <p><strong>Country</strong>: <%= link_to @trip.country.name, country_path(@trip.country) %></p>
+  <p><strong>Country</strong>: <%= link_to @trip.country.name, countries_path(@trip.country) %></p>
   <p><strong>Season</strong>: <%= @trip.season %></p>
-  <p><strong>Categories</strong>: <%= @trip.categories.map { |category| link_to(category.name, category_path(category)) }.join(', ').html_safe %></p>
+  <p><strong>Categories</strong>: <%= @trip.categories.map { |category| link_to(category.name, categories_path(category)) }.join(', ').html_safe %></p>
   <p><strong>Day</strong>: <%= @trip.day %></p>
   <p><strong>Time</strong>: <%= @trip.time %></p>
 <% end %>

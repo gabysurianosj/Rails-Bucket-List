@@ -1,2 +1,2 @@
 module CountriesHelper
-end 
+end
