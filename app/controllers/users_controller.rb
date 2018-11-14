@@ -20,7 +20,7 @@ class UsersController < ApplicationController
     end
   end
 
-  def trip
+  def show
     @user = current_user
     if logged_in?
       if @user == User.find_by(id: params[:id])
