@@ -64,7 +64,7 @@ vegas.country = usa
 vegas.save
 
 # Listing
-listing1 = Listing.create(todolist: currently_planning, trip: vegas, user: gaby, user_status: 'Currently Planning', season: 'summer')
-listing2 = Listing.create(todolist: to_start, trip: zugspitze, user: gaby, user_status: "Not Started", season: 'summer')
-listing3 = Listing.create(todolist: waiting_for, trip: lago_coatepeque, user: gaby, user_status: "on Hold", season: 'summer', fav: true)
-listing4 = Listing.create(todolist: currently_planning, trip: pyramids, user: gaby, user_status: "Currently Watching", season: 'summer', fav: true)
+listing1 = Listing.create(todolist: currently_planning, trip: vegas, user: gaby, user_status: 'Currently Planning', user_season: 'summer')
+listing2 = Listing.create(todolist: to_start, trip: zugspitze, user: gaby, user_status: "Not Started", user_season: 'summer')
+listing3 = Listing.create(todolist: waiting_for, trip: lago_coatepeque, user: gaby, user_status: "on Hold", user_season: 'summer', fav: true)
+listing4 = Listing.create(todolist: currently_planning, trip: pyramids, user: gaby, user_status: "Currently Watching", user_season: 'summer', fav: true)
