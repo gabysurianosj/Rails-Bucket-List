@@ -5,3 +5,66 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# USERS
+gaby = User.create(email: 'gabysuriano165@gmail.com', password: 'hola123')
+aileen = User.create(email: 'aileen@gmail.com', password: 'test123')
+
+# TODOLISTS
+currently_planning = Todolist.create(name: 'Currently Planning', description: 'Trips I\'m currently planning', user: gaby)
+to_start = Todolist.create(name: 'To Start', description: 'Trips I want to start planning', user: gaby)
+waiting_for = Todolist.create(name: 'Waiting', description: 'Trips on hold', user: gaby)
+
+# CATEGORIES
+outdoor = Category.create(name: "Outdoor")
+culture = Category.create(name: "Culture")
+family = Category.create(name: "Family")
+party = Category.create(name: "Party")
+food = Category.create(name: "Food")
+sightseeing = Category.create(name: "Sightseeing")
+
+# COUNTRIES
+germany = Channel.create(name: "Germany")
+usa = Channel.create(name: "USA")
+egypt = Channel.create(name: "China")
+australia = Channel.create(name: "Australia")
+salvador = Channel.create(name: "El Salvador")
+
+# TRIPS
+zugspitze = Trip.create( title: 'Zugspitze',
+                      description: 'tallest peak in Germany ~3000m',
+                      day: 'Fri',
+                      time: '8:00 AM',
+                      season: 'summer' )
+zugspitze.categories << outdoor
+zugspitze.country = germany
+zugspitze.save
+
+lago_coatepeque = Trip.create( title: 'Lago Coatepeque',
+                      description: 'Most beautiful lake in El Salvador',
+                      season: 'anytime' )
+lago_coatepeque.categories << outdoor
+lago_coatepeque.country = salvador
+lago_coatepeque.save
+
+pyramids = Trip.create( title: 'Pyramids',
+                      description: 'Ancient pyramids in Egypt',
+                      season: 'winter' )
+pyramids.categories << outdoor
+pyramids.categories << culture
+pyramids.country = egypt
+pyramids.save
+
+vegas = Trip.create( title: 'Viva las Vegas',
+                      description: 'partying ofc',
+                      season: 'summer' )
+vegas.categories << party
+vegas.categories << sightseeing
+vegas.country = usa
+vegas.save
+
+# Listing
+listing1 = Listing.create(watchlist: currently_planning, show: vegas, user: gaby, user_status: 'Currently Planning', season: 'summer')
+listing2 = Listing.create(watchlist: to_start, show: zugspitze, user: gaby, user_status: "Not Started", season: 'summer')
+listing3 = Listing.create(watchlist: waiting_for, show: lago_coatepeque, user: gaby, user_status: "on Hold", season: 'summer', fav: true)
+listing4 = Listing.create(watchlist: currently_planning, show: pyramids, user: gaby, user_status: "Currently Watching", season: 'summer', fav: true)
