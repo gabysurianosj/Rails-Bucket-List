@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_105736) do
+ActiveRecord::Schema.define(version: 2018_11_14_111141) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_105736) do
   end
 
   create_table "listings", force: :cascade do |t|
-    t.integer "mood_id"
+    t.integer "todolist_id"
     t.integer "trip_id"
     t.integer "user_id"
     t.string "user_status"
@@ -35,7 +35,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_105736) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "moods", force: :cascade do |t|
+  create_table "todolists", force: :cascade do |t|
     t.string "name"
     t.text "description"
     t.integer "user_id"

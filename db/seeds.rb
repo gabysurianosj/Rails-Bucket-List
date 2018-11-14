@@ -24,11 +24,11 @@ food = Category.create(name: "Food")
 sightseeing = Category.create(name: "Sightseeing")
 
 # COUNTRIES
-germany = Channel.create(name: "Germany")
-usa = Channel.create(name: "USA")
-egypt = Channel.create(name: "China")
-australia = Channel.create(name: "Australia")
-salvador = Channel.create(name: "El Salvador")
+germany = Country.create(name: "Germany")
+usa = Country.create(name: "USA")
+egypt = Country.create(name: "China")
+australia = Country.create(name: "Australia")
+salvador = Country.create(name: "El Salvador")
 
 # TRIPS
 zugspitze = Trip.create( title: 'Zugspitze',
