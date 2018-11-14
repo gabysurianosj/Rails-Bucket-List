@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_14_111141) do
+ActiveRecord::Schema.define(version: 2018_11_14_112122) do
 
   create_table "categories", force: :cascade do |t|
     t.string "name"
@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 2018_11_14_111141) do
 
   create_table "countries", force: :cascade do |t|
     t.string "name"
-    t.string "device"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,6 +32,7 @@ ActiveRecord::Schema.define(version: 2018_11_14_111141) do
     t.integer "user_season"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "fav", default: false
   end
 
   create_table "todolists", force: :cascade do |t|
@@ -54,7 +54,6 @@ ActiveRecord::Schema.define(version: 2018_11_14_111141) do
     t.string "title"
     t.text "description"
     t.integer "country_id"
-    t.string "status"
     t.string "day"
     t.string "time"
     t.string "season"
