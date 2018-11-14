@@ -64,7 +64,7 @@ vegas.country = usa
 vegas.save
 
 # Listing
-listing1 = Listing.create(watchlist: currently_planning, show: vegas, user: gaby, user_status: 'Currently Planning', season: 'summer')
-listing2 = Listing.create(watchlist: to_start, show: zugspitze, user: gaby, user_status: "Not Started", season: 'summer')
-listing3 = Listing.create(watchlist: waiting_for, show: lago_coatepeque, user: gaby, user_status: "on Hold", season: 'summer', fav: true)
-listing4 = Listing.create(watchlist: currently_planning, show: pyramids, user: gaby, user_status: "Currently Watching", season: 'summer', fav: true)
+listing1 = Listing.create(todolist: currently_planning, show: vegas, user: gaby, user_status: 'Currently Planning', season: 'summer')
+listing2 = Listing.create(todolist: to_start, show: zugspitze, user: gaby, user_status: "Not Started", season: 'summer')
+listing3 = Listing.create(todolist: waiting_for, show: lago_coatepeque, user: gaby, user_status: "on Hold", season: 'summer', fav: true)
+listing4 = Listing.create(todolist: currently_planning, show: pyramids, user: gaby, user_status: "Currently Watching", season: 'summer', fav: true)
