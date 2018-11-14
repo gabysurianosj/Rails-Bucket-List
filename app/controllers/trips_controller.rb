@@ -1,6 +1,6 @@
 class TripsController < ApplicationController
   before_action :require_login
-  before_action :set_trip, only: [:trip, :edit, :update]
+  before_action :set_trip, only: [:show, :edit, :update]
   before_action :created_by_current_user, only: [:edit, :update]
   helper_method :current_user
 
@@ -63,9 +63,9 @@ class TripsController < ApplicationController
                                   :day,
                                   :time,
                                   :season,
-                                  :created_by, #?
+                                  :created_by,
                                   category_ids:[],
-                                  category_attributes:[:name],
+                                  categories_attributes:[:name],
                                   country_attributes:[:name])
   end
 

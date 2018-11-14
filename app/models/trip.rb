@@ -6,7 +6,7 @@ class Trip < ApplicationRecord
   has_many :categories, through: :trip_categories
   belongs_to :country
 
-  validates :title, presence: true, uniqueness: { scope: :channel_id } # Validates uniqueness of title and channel
+  validates :title, presence: true, uniqueness: { scope: :country_id } # Validates uniqueness of title and channel
   #validates :season, presence: true, uniqueness: { greater_than: 0 }
 
   scope :search, -> (query) { where("title LIKE ?", "%" + query + "%") }

@@ -16,7 +16,7 @@ class TodolistsController < ApplicationController
     @todolist = @user.todolists.build(todolist_params)
     if @todolist.save
       redirect_to todolist_path(@todolist)
-      flash[:message] = "New ToDolist Created!"
+      flash[:message] = "New To-Do list Created!"
     else
       render :new
     end
@@ -43,10 +43,10 @@ class TodolistsController < ApplicationController
     if @todolist
       @todolist.destroy
       redirect_to todolists_path
-      flash[:message] = "Your ToDolist has been deleted"
+      flash[:message] = "Your To-Do list has been deleted"
     else
       render :trip
-      flash[:danger] = "This ToDolist could not be deleted"
+      flash[:danger] = "This To-Do list could not be deleted"
     end
   end
 
@@ -58,7 +58,7 @@ class TodolistsController < ApplicationController
   def set_user_todolist
     @todolist = Todolist.find_by(id: params[:id])
     unless @todolist.user == current_user
-      flash[:danger] = "This is not your ToDolist!"
+      flash[:danger] = "This is not your To-Do list!"
       redirect_to todolists_path
     end
   end

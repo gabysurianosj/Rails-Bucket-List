@@ -5,15 +5,15 @@
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
-      <%= button_to "Back to Trips", shows_path, :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Back to Trips", trips_path, :method => "get", class: "btn btn-info btn-block" %>
     </li>
-    <% if @show.created_by == current_user.id %>
+    <% if @trip.created_by == current_user.id %>
       <li class="nav-item mb-3">
-        <%= button_to "Update trip details", edit_trip_path(@show), :method => "get", class: "btn btn-info btn-block" %>
+        <%= button_to "Update trip details", edit_trip_path(@trip), :method => "get", class: "btn btn-info btn-block" %>
       </li>
     <% end %>
     <li class="nav-item">
-      <%= button_to "Add to A Todolist", new_trip_listing_path(@show), :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Add to A To-Do List", new_trip_listing_path(@trip), :method => "get", class: "btn btn-info btn-block" %>
     </li>
   </ul>
 <% end %>
@@ -21,13 +21,13 @@
 <% content_for :content do %>
   <p><%= @trip.description %></p>
   <p><strong>Country</strong>: <%= link_to @trip.country.name, country_path(@trip.country) %></p>
-  <p><strong>Season</strong>: <%= @show.season %></p>
+  <p><strong>Season</strong>: <%= @trip.season %></p>
   <p><strong>Categories</strong>: <%= @trip.categories.map { |category| link_to(category.name, category_path(category)) }.join(', ').html_safe %></p>
   <p><strong>Day</strong>: <%= @trip.day %></p>
   <p><strong>Time</strong>: <%= @trip.time %></p>
 <% end %>
 
 <% content_for :sidebar do %>
-  <h4>My ToDolists</h4>
+  <h4>My To-Do Lists</h4>
   <%= todolist_options(@listings, @trip) %>
 <% end %>

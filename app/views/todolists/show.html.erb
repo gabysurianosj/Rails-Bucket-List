@@ -6,13 +6,13 @@
 <% content_for :vertical_nav do %>
   <ul class="nav flex-column">
     <li class="nav-item mb-3">
-      <%= button_to "Edit this ToDolist", edit_user_todolist_path(current_user, @todolist), :method => "get", class: "btn btn-warning btn-block" %>
+      <%= button_to "Edit this To-Do List", edit_user_todolist_path(current_user, @todolist), :method => "get", class: "btn btn-warning btn-block" %>
     </li>
     <li class="nav-item mb-3">
-      <%= button_to "Back to All ToDolists", user_todolists_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Back to All To-Do Lists", user_todolists_path(current_user), :method => "get", class: "btn btn-info btn-block" %>
     </li>
     <li class="nav-item">
-      <%= button_to "Add Trips", shows_path, :method => "get", class: "btn btn-info btn-block" %>
+      <%= button_to "Add Trips", trips_path, :method => "get", class: "btn btn-info btn-block" %>
     </li>
   </ul>
 <% end %>
@@ -31,6 +31,6 @@
 
 <% content_for :sidebar do %>
   <%= form_tag(todolist_path, method: "delete") do %>
-    <%= submit_tag("Delete ToDolist", class: "btn btn-danger btn-block") %>
+    <%= submit_tag("Delete To-Do List", class: "btn btn-danger btn-block") %>
   <% end %>
 <% end %>
