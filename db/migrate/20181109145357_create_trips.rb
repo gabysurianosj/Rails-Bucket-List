@@ -9,7 +9,7 @@ class CreateTrips < ActiveRecord::Migration[5.2]
       t.string :day
       t.string :time
       t.string :season
-      t.boolean :priority, default: false
+      t.boolean :fav, default: false
        t.timestamps
     end
   end

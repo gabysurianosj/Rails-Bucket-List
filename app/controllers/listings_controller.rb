@@ -44,7 +44,7 @@ class ListingsController < ApplicationController
 
   private
   def listing_params
-    params.require(:listing).permit(:todolist_id, :user_id, :user_status, :user_season, :priority)
+    params.require(:listing).permit(:todolist_id, :user_id, :user_status, :user_season, :fav)
   end
 
   def set_listing
