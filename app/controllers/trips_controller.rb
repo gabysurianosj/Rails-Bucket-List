@@ -50,10 +50,10 @@ class TripsController < ApplicationController
     render :index
   end
 
-  def behind
-    @trips = Trip.behind_on(params[:user_id])
-    render :index
-  end
+  #def behind
+  #  @trips = Trip.behind_on(params[:user_id])
+  #  render :index
+  #end
 
   private
   def trip_params
