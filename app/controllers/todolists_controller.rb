@@ -16,7 +16,7 @@ class TodolistsController < ApplicationController
     @todolist = @user.todolists.build(todolist_params)
     if @todolist.save
       redirect_to todolist_path(@todolist)
-      flash[:message] = "New To-Do list Created!"
+      flash[:message] = "New To-Do List Created!"
     else
       render :new
     end
@@ -51,7 +51,6 @@ class TodolistsController < ApplicationController
   end
 
   private
-  
   def todolist_params
     params.require(:todolist).permit(:name, :description, :user_id)
   end
