@@ -21,7 +21,7 @@ class Trip < ApplicationRecord
     end
   end
 
-  def categories_attributes=(categories_attributes)
+  def categories_attributes=(category_attributes)
     category_name = category_attributes["0"]["name"]
     unless category_name.blank?
       category = Category.find_or_create_by(name: category_name)
