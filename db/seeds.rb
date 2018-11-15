@@ -26,7 +26,7 @@ sightseeing = Category.create(name: "Sightseeing")
 # COUNTRIES
 germany = Country.create(name: "Germany")
 usa = Country.create(name: "USA")
-egypt = Country.create(name: "China")
+egypt = Country.create(name: "Egypt")
 australia = Country.create(name: "Australia")
 salvador = Country.create(name: "El Salvador")
 
