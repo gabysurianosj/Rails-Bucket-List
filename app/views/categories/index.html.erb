@@ -14,7 +14,7 @@
 <% end %>
 
 <% content_for :content do %>
-  <p>Click on a category below to see all trips in that Category</p>
+  <p>Click on a category below to see all trips in that category</p>
   <% alphebetize(@categories).each do |category| %>
     <p><%= link_to category.name, category_path(category) %></p>
   <% end %>
